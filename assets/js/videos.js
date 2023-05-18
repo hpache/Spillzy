@@ -1,4 +1,5 @@
 var spillzy = window.spillzy || {}
+var username
 (function VideosScopeWrapper($){
     var authToken;
     spillzy.authToken.then(function setAuthToken(token){
@@ -12,7 +13,6 @@ var spillzy = window.spillzy || {}
         alert(error);
         window.location.href = "./signIn.html";
     });
-    var username;
     var region = 'us-east-1'
 
     $.ajax({
