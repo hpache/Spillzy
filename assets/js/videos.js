@@ -34,6 +34,9 @@ var spillzy = window.spillzy || {}
             window.location.href = '/signIn.html'
         }
     });
+
+    getURLS(username)
+
     function getURLS(username){
         $.ajax({
             method: 'POST',
@@ -92,8 +95,6 @@ var spillzy = window.spillzy || {}
                 $('.authToken').text(token);
             }
         });
-
-        getURLS(username)
 
         window.setInterval(function(){
             refreshActiveVid()
