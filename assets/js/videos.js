@@ -1,5 +1,4 @@
 var spillzy = window.spillzy || {}
-var username
 (function VideosScopeWrapper($){
     var authToken;
     spillzy.authToken.then(function setAuthToken(token){
@@ -14,6 +13,7 @@ var username
         window.location.href = "./signIn.html";
     });
     var region = 'us-east-1'
+    var username
 
     $.ajax({
         method: 'POST',
@@ -28,6 +28,7 @@ var username
         }),
         success: function reqSuccess(res){
             username = res.Username
+            getURLS(username)
         },
         error: function reqError(error){
             console.log(error)
@@ -43,9 +44,7 @@ var username
                 Authorization: authToken
             },
             data: JSON.stringify({
-                PickupLocation: {
-                    username: username
-                }
+                username: username
             }),
             contentType: 'application/json',
             success: completeRequest,
@@ -93,10 +92,6 @@ var username
                 $('.authToken').text(token);
             }
         });
-
-        if(username){
-            getURLS(username)
-        }
 
         window.setInterval(function(){
             refreshActiveVid()
