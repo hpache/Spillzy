@@ -85,9 +85,6 @@ var spillzy = window.spillzy || {}
         img.src = `${img.src}?random=${new Date().getTime()}`;
     }
 
-    console.log(username)
-    getURLS(username)
-
     $(function onDocReady(){
 
         spillzy.authToken.then(function updateAuthMessage(token) {
@@ -96,6 +93,10 @@ var spillzy = window.spillzy || {}
                 $('.authToken').text(token);
             }
         });
+
+        if(username){
+            getURLS(username)
+        }
 
         window.setInterval(function(){
             refreshActiveVid()
