@@ -2,14 +2,14 @@ var spillzy = window.spillzy || {};
 (function scopeWrapper($){
 
     var poolData = {
-        UserPoolId: _config.cognito.userPoolId,
-        ClientId: _confg.cognito.userPoolClientId
+        UserPoolId: 'us-east-1_RAx3oBf3S',
+        ClientId: '4n86q7f2k72me1uiqcgvi4ri78'
     };
 
     var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
     if (typeof AWSCognito !== 'undefined') {
-        AWSCognito.config.region = _config.cognito.region;
+        AWSCognito.config.region = 'us-east-1';
     }
 
     spillzy.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {

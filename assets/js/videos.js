@@ -38,7 +38,7 @@ var spillzy = window.spillzy || {}
     function getURLS(username){
         $.ajax({
             method: 'POST',
-            url: _config.api.invokeUrl + '/getLinks',
+            url: 'https://5muja1w78d.execute-api.us-east-1.amazonaws.com/prod' + '/getLinks',
             headers: {
                 Authorization: authToken
             },
