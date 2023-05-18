@@ -35,8 +35,6 @@ var spillzy = window.spillzy || {}
         }
     });
 
-    getURLS(username)
-
     function getURLS(username){
         $.ajax({
             method: 'POST',
@@ -86,6 +84,9 @@ var spillzy = window.spillzy || {}
         var img = $('.carousel-item.active')[0].children[0]
         img.src = `${img.src}?random=${new Date().getTime()}`;
     }
+
+    console.log(username)
+    getURLS(username)
 
     $(function onDocReady(){
 
