@@ -28,7 +28,6 @@ var spillzy = window.spillzy || {}
         }),
         success: function reqSuccess(res){
             username = res.Username
-            getURLS(username)
         },
         error: function reqError(error){
             console.log(error)
@@ -88,7 +87,7 @@ var spillzy = window.spillzy || {}
 
         spillzy.authToken.then(function updateAuthMessage(token) {
             if (token) {
-                console.log(token)
+                alert(token)
             }
         });
 
@@ -97,6 +96,4 @@ var spillzy = window.spillzy || {}
           }, 1000);
     })
 
-
-
-}(jQuery))
+}(jQuery));
