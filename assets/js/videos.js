@@ -1,5 +1,5 @@
 var spillzy = window.spillzy || {}
-(function videosScopeWrapper($){
+(function VideosScopeWrapper($){
     var authToken;
     spillzy.authToken.then(function setAuthToken(token){
         if (token){
